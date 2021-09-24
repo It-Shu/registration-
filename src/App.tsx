@@ -39,7 +39,7 @@ function App() {
       formik.resetForm()
     }
   })
-  const [state, setState] = useState(true)
+  const [state, setState] = useState(false)
 
   const disabledButton = () => {
     return !(formik.values.clientName && formik.values.email && formik.values.telNumber && state);
@@ -118,6 +118,7 @@ function App() {
                 className='checkbox'
                 type="checkbox"
                 onClick={(e)=>{
+                  debugger
                   setState(e.currentTarget.checked)
                 }}
             /><label className='label'>Принимаю <a className='link' href="">условия</a> пользования</label>
