@@ -42,7 +42,12 @@ function App() {
     })
 
     // локальный стейт для checkbox
-    const [state, setState] = useState(true)
+    const [state, setState] = useState(false)
+
+    // функция считывает и передает изменение checkbox в state
+    const onClickChecked = (e: React.MouseEvent<HTMLInputElement>) => {
+        setState(e.currentTarget.checked)
+    }
 
     // функция описывает условия для включения параметра disabled для button
     const disabledButton = () => {
@@ -119,9 +124,7 @@ function App() {
                     <input
                         className='checkbox'
                         type="checkbox"
-                        onClick={(e) => {
-                            setState(e.currentTarget.checked)
-                        }}
+                        onClick={onClickChecked}
                     /><label className='label'>Принимаю <a className='link' href="">условия</a> пользования</label>
                 </div>
                 <div>
