@@ -41,8 +41,9 @@ function App() {
         }
     })
 
-
+    // локальный стейт для checkbox
     const [state, setState] = useState(true)
+
 
     const disabledButton = () => {
         return !(formik.values.clientName && formik.values.email && formik.values.telNumber && state);
@@ -121,7 +122,7 @@ function App() {
                         onClick={(e) => {
                             setState(e.currentTarget.checked)
                         }}
-                    /><label className='label'>Принимаю <a className='link' href="#top">условия</a> пользования</label>
+                    /><label className='label'>Принимаю <a className='link' href="">условия</a> пользования</label>
                 </div>
                 <div>
                     <button
