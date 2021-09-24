@@ -58,8 +58,8 @@ function App() {
     return (
         <div>
             <form className='form' onSubmit={formik.handleSubmit}>
-                <h1 className='h1'>Регистрация</h1>
-                <h4 className='h4'>Уже есть аккаунт? <a className='link' href="">Войти</a></h4>
+                <h1>Регистрация</h1>
+                <h4>Уже есть аккаунт? <a className='linkEnter' href="">Войти</a></h4>
                 <div>
                     <div>
                         <label className='label'>Имя</label>
@@ -111,21 +111,21 @@ function App() {
 
                 <div>
                     <div>
-                        <label>Язык</label>
+                        <label className='label'>Язык</label>
                     </div>
-                    <select>
-                        <option value="/rus/">Русский</option>
-                        <option value="/en/">Английский</option>
-                        <option value="/ch/">Китайский</option>
-                        <option value="/sp/">Испанский</option>
+                    <select className='languagesSelect'>
+                        <option className='language' value="/rus/">Русский</option>
+                        <option className='language' value="/en/">Английский</option>
+                        <option className='language' value="/ch/">Китайский</option>
+                        <option className='language' value="/sp/">Испанский</option>
                     </select>
                 </div>
-                <div>
+                <div className='checkDiv'>
                     <input
                         className='checkbox'
                         type="checkbox"
                         onClick={onClickChecked}
-                    /><label className='label'>Принимаю <a className='link' href="">условия</a> пользования</label>
+                    /><label className='labelCheckbox'>Принимаю <a className='link' href="">условия</a> пользования</label>
                 </div>
                 <div>
                     <button
