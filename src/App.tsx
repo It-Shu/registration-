@@ -44,10 +44,6 @@ function App() {
     // локальный стейт для checkbox
     const [state, setState] = useState(true)
 
-    const onClickChecked = (e: React.MouseEvent<HTMLInputElement>) => {
-        setState(e.currentTarget.checked)
-    }
-
     // функция описывает условия для включения параметра disabled для button
     const disabledButton = () => {
         return !(formik.values.clientName && formik.values.email && formik.values.telNumber && state);
@@ -123,7 +119,9 @@ function App() {
                     <input
                         className='checkbox'
                         type="checkbox"
-                        onClick={onClickChecked}
+                        onClick={(e) => {
+                            setState(e.currentTarget.checked)
+                        }}
                     /><label className='label'>Принимаю <a className='link' href="">условия</a> пользования</label>
                 </div>
                 <div>
