@@ -10,6 +10,8 @@ type FormikErrorsType = {
 
 function App() {
 
+
+
     // подключается библиотека formik для настройки валидации формы регистрации
     const formik = useFormik({
         initialValues: {
@@ -48,6 +50,8 @@ function App() {
     const onClickChecked = (e: React.MouseEvent<HTMLInputElement>) => {
         setState(e.currentTarget.checked)
     }
+
+
 
     // функция описывает условия для включения параметра disabled для button
     const disabledButton = () => {
